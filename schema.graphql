@@ -5,7 +5,6 @@ type Block @entity {
 	gasUsed:      BigInt!
 	gasLimit:     BigInt!
 	timestamp:    BigInt!
-	size:         BigInt
 	transactions: [Transaction!]! @derivedFrom(field: "block")
 }
 

@@ -8,6 +8,5 @@ export function handleBlock(block: EthereumBlock): void {
 	b.gasUsed   = block.gasUsed
 	b.gasLimit  = block.gasLimit
 	b.timestamp = block.timestamp
-	b.size      = block.size
 	b.save()
 }
