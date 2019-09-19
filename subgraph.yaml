@@ -1,0 +1,25 @@
+specVersion: 0.0.2
+description: GasStation
+repository: https://github.com/Amxx/GasStation-subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - name: GasStation
+    kind: ethereum/contract
+    network: mainnet
+    source:
+      address: '0x0000000000000000000000000000000000000000'
+      abi: EmptyABI
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - Block
+        - Transaction
+      abis:
+        - name: EmptyABI
+          file: abi/EmptyABI.json
+      blockHandlers:
+        - handler: handleBlock
+      file: ./src/mapping.ts
